@@ -4,4 +4,5 @@
   <artifactId>alfa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>ALFA</name>
+  <packaging>war</packaging>
 </project>
