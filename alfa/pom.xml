@@ -23,11 +23,45 @@
   </dependencies>
   
   <properties>
+  	<java.version>1.8</java.version>
   	<wro4j.version>1.8.0</wro4j.version>
+  	<angularjs.version>1.4.9</angularjs.version>
+	<bootstrap.version>3.3.7-1</bootstrap.version>
+	<jquery.version>2.2.4</jquery.version>
   </properties>
   
   <build>
+  	<resources>
+  		<resource>
+  			<directory>${project.basedir}/src/main/resources}</directory>
+  		</resource>
+  		<resource>
+  			<directory>${project.build.directory}/generated-resources</directory>
+  		</resource>
+  	</resources>
   	<plugins>
+  		<plugin>
+			<artifactId>maven-resources-plugin</artifactId>
+			<executions>
+				<execution>
+					<!-- Serves *only* to filter the wro.xml so it can get an absolute path for the project -->
+					<id>copy-resources</id>
+					<phase>validate</phase>
+					<goals>
+						<goal>copy-resources</goal>
+					</goals>
+					<configuration>
+						<outputDirectory>${basedir}/target/wro</outputDirectory>
+						<resources>
+							<resource>
+								<directory>src/main/wro</directory>
+								<filtering>true</filtering>
+							</resource>
+						</resources>
+					</configuration>
+				</execution>
+			</executions>
+		</plugin>
   		<plugin>
   			<groupId>org.springframework.boot</groupId>
   			<artifactId>spring-boot-maven-plugin</artifactId>
