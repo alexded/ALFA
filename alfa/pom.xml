@@ -32,13 +32,13 @@
   
   <build>
   	<resources>
-  		<resource>
-  			<directory>${project.basedir}/src/main/resources}</directory>
-  		</resource>
-  		<resource>
-  			<directory>${project.build.directory}/generated-resources</directory>
-  		</resource>
-  	</resources>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>${project.build.directory}/generated-resources</directory>
+      </resource>
+    </resources>
   	<plugins>
   		<plugin>
 			<artifactId>maven-resources-plugin</artifactId>
