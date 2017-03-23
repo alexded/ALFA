@@ -1,4 +1,7 @@
 angular.module( 'hello', [] )
-	.controller( 'home', function() {
-		this.greeting = { id: '201703231341', content: 'Hello World!' }
+	.controller( 'home', function( $http ) {
+		var self = this;
+		$http.get( "/resource/" ).then( function( response ){
+			self.greeting = response.data;
+		});
 	})
